@@ -30,6 +30,7 @@ document.addEventListener("mousemove", (e) => {
   }
 });
 
+
 function animate() {
   ctx.clearRect(0, 0, width, height);
   sparkles.forEach((s, i) => {
