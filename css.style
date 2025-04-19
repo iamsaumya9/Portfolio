@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ffc1e3, #e1b4ff);
+  font-family: 'Comic Sans MS', cursive;
+  overflow-x: hidden;
+  color: #6b005d;
+}
+
+.main {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+h1 {
+  font-size: 3em;
+  color: #ff69b4;
+  text-shadow: 2px 2px lavender;
+}
+
+.tagline {
+  font-size: 1.4em;
+  margin: 10px 0 20px;
+  color: #8e44ad;
+}
+
+.btn {
+  padding: 10px 25px;
+  background-color: hotpink;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 10px lavender;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background-color: #ff85c1;
+  box-shadow: 0 0 15px #ffffff;
+}
+
+.section {
+  padding: 60px 20px;
+  background: #f9e6ff;
+  text-align: center;
+}
+
+.card {
+  background: #ffe6f7;
+  border: 2px solid #ffb3da;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 10px;
+  padding: 20px;
+  font-size: 1.2em;
+  box-shadow: 0 0 10px #f0f;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #ffd9ec;
+  font-size: 1em;
+  color: #a3006c;
+}
+
+/* Floating stars */
+.stars, .hearts {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.stars::before, .stars::after,
+.hearts::before, .hearts::after {
+  content: '✨✨✨✨✨✨✨✨✨✨';
+  position: absolute;
+  white-space: nowrap;
+  animation: sparkle 10s linear infinite;
+  font-size: 30px;
+  color: white;
+  opacity: 0.6;
+}
+
+.hearts::before {
+  content: '💖💗💓💕💞💘💝💟❣️';
+  top: 30%;
+  left: 0;
+  animation: float 15s infinite linear;
+  font-size: 24px;
+  color: pink;
+}
+
+@keyframes sparkle {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes float {
+  0% { transform: translateY(-100%) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
