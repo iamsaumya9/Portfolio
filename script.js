@@ -18,6 +18,12 @@ window.onresize = () => {
 
 document.addEventListener("mousemove", (e) => {
   for (let i = 0; i < 5; i++) {
+    let colorChoice = Math.random() > 0.5 ? 'red' : `hsl(${Math.random() * 360}, 100%, 75%)`; // 50% chance of red hearts
+    if (colorChoice === 'red') {
+      // Creating different intensities of red hearts
+      colorChoice = `hsl(0, 100%, ${Math.random() * 50 + 30}%)`; // Random intensity of red (30% to 80%)
+    }
+
     sparkles.push({
       x: e.clientX,
       y: e.clientY,
@@ -25,10 +31,11 @@ document.addEventListener("mousemove", (e) => {
       size: Math.random() * 4 + 2,
       dx: (Math.random() - 0.5) * 2,
       dy: (Math.random() - 0.5) * 2,
-      color: `hsl(${Math.random() * 360}, 100%, 75%)`
+      color: colorChoice
     });
   }
 });
+
 
 
 function animate() {
