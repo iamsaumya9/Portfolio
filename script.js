@@ -1,4 +1,3 @@
-// 💬 cute popup on load
 window.onload = function() {
   alert("Welcome to Saumya’s magical world! ✨ Handle with love 💖");
 };
@@ -36,22 +35,8 @@ document.addEventListener("mousemove", (e) => {
   }
 });
 
-
-
 function animate() {
   ctx.clearRect(0, 0, width, height);
   sparkles.forEach((s, i) => {
     ctx.globalAlpha = s.alpha;
     ctx.fillStyle = s.color;
-    ctx.beginPath();
-    ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
-    ctx.fill();
-    s.x += s.dx;
-    s.y += s.dy;
-    s.alpha -= 0.02;
-    if (s.alpha <= 0) sparkles.splice(i, 1);
-  });
-  requestAnimationFrame(animate);
-}
-
-animate();
