@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saumya's Sparkly Portfolio</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles.css">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
 </head>
 <body>
@@ -12,10 +12,10 @@
     <canvas id="sparkleCanvas" class="fixed top-0 left-0 w-full h-full z-0"></canvas>
 
     <!-- Cursor Trail Canvas -->
-    <canvas id="trailCanvas" class="fixed top-0 left-0 w-full h-full z-20 pointer-events-none"></canvas>
+    <canvas id="trailCanvas" class="fixed top-0 left-0 w-full h-full z-30 pointer-events-none"></canvas>
 
     <!-- Main Content -->
-    <div class="relative z-10 container mx-auto p-6">
+    <div class="relative z-10 container mx-auto p-6 pt-0">
         <!-- Header -->
         <header class="text-center mb-12">
             <h1 class="text-5xl font-bold text-pink-600 animate-bounce">🌸 Saumya Ghatole 🌸</h1>
@@ -123,7 +123,7 @@
     </div>
 
     <!-- Floating Hearts -->
-    <div id="hearts" class="fixed top-0 left-0 w-full h-full pointer-events-none z-20"></div>
+    <div id="hearts" class="fixed top-0 left-0 w-full h-full pointer-events-none z-10"></div>
 
     <script src="./script.js"></script>
 </body>
