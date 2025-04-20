@@ -52,6 +52,9 @@ const trailCtx = trailCanvas.getContext('2d');
 trailCanvas.width = window.innerWidth;
 trailCanvas.height = window.innerHeight;
 
+// Debug cursor trail
+console.log('Trail canvas initialized:', trailCanvas);
+
 const trailParticles = [];
 class TrailParticle {
     constructor(x, y) {
@@ -83,6 +86,7 @@ class TrailParticle {
 }
 
 document.addEventListener('mousemove', (e) => {
+    console.log('Mouse move detected:', e.clientX, e.clientY);
     for (let i = 0; i < 3; i++) {
         trailParticles.push(new TrailParticle(e.clientX, e.clientY));
     }
@@ -108,11 +112,12 @@ function createHeart() {
     heart.innerHTML = '💖';
     heart.className = 'absolute text-2xl';
     heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.top = '100vh';
+    // Spawn hearts across full document height
+    heart.style.top = Math.random() * document.body.scrollHeight + 'px';
     heartsContainer.appendChild(heart);
 
     gsap.to(heart, {
-        y: -window.innerHeight - 100,
+        y: -document.body.scrollHeight - 100,
         x: Math.random() * 100 - 50,
         opacity: 0,
         duration: 3 + Math.random() * 2,
@@ -129,7 +134,7 @@ function createStar() {
     star.innerHTML = '✨';
     star.className = 'absolute text-xl';
     star.style.left = Math.random() * 100 + 'vw';
-    star.style.top = Math.random() * 100 + 'vh';
+    star.style.top = Math.random() * document.body.scrollHeight + 'px';
     document.body.appendChild(star);
 
     gsap.to(star, {
