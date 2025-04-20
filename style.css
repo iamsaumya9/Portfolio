@@ -1,7 +1,7 @@
 body {
-    background-image: linear-gradient(to bottom right, #f9a8d4, #f9a8d4, #d8b4fe);
-    min-height: 100vh;
+    background-image: linear-gradient(to bottom right, #f accél, #f9a8d4, #d8b4fe);
     font-family: sans-serif;
+    margin: 0;
 }
 
 .container {
@@ -9,6 +9,25 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 1.5rem;
+    padding-top: 0;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    display: block;
+}
+
+#hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    pointer-events: none;
 }
 
 .text-5xl {
@@ -111,10 +130,6 @@ body {
 
 .text-purple-800 {
     color: #5b21b6;
-}
-
-.mt-2 {
-    margin-top: 0.5rem;
 }
 
 .text-pink-500:hover {
