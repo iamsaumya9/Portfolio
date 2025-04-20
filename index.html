@@ -1,31 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Saumya's Sparkly Space 💖</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saumya's Sparkly Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
-  <canvas id="sparkleCanvas"></canvas>
-  
-  <section class="main">
-    <h1>✨ Hi I'm Saumya ✨</h1>
-    <p class="tagline">A creative soul who codes with sparkle 💻💫</p>
-    <a href="#projects" class="btn">View My Magic</a>
-  </section>
+    <!-- Sparkle Particles Background -->
+    <canvas id="sparkleCanvas" class="fixed top-0 left-0 w-full h-full z-0"></canvas>
 
-  <section class="section" id="projects">
-    <h2>🌟 Projects</h2>
-    <div class="card">💖 Cute Portfolio</div>
-    <div class="card">💫 Starry To-do App</div>
-    <div class="card">🌈 Rainbow Weather Checker</div>
-  </section>
+    <!-- Cursor Trail Canvas -->
+    <canvas id="trailCanvas" class="fixed top-0 left-0 w-full h-full z-20 pointer-events-none"></canvas>
 
-  <footer>
-    Made with love & a very possessive boyfriend 😤💋
-  </footer>
+    <!-- Main Content -->
+    <div class="relative z-10 container mx-auto p-6">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-bold text-pink-600 animate-bounce">🌸 Saumya Ghatole 🌸</h1>
+            <p class="text-xl text-purple-700 mt-2">Data Science Enthusiast | CSE B.Tech Vibin'</p>
+        </header>
 
-  <script src="script.js"></script>
+        <!-- About Section -->
+        <section class="bg-white bg-opacity-80 rounded-2xl p-8 mb-8 shadow-lg">
+            <h2 class="text-3xl font-semibold text-pink-500 mb-4 flex items-center">
+                <span class="mr-2">💖</span> About Me
+            </h2>
+            <p class="text-purple-800">
+                Yo, I'm Saumya Ghatole, a CSE Data Science student who's all about turning data into ✨magic✨! I'm slaying it with AI, coding, and a sprinkle of creativity. Passionate about solving real-world probs with tech, I'm here to make waves and keep it 100. Let's vibe and create something epic together! 😎
+            </p>
+            <p class="text-purple-800 mt-2">
+                📧 <a href="mailto:saumyaghatole@gmail.com" class="text-pink-500 hover:underline">saumyaghatole@gmail.com</a> | 📞 9589417676
+            </p>
+        </section>
+
+        <!-- Tabs Navigation -->
+        <nav class="flex justify-center mb-8">
+            <button class="tab-btn bg-pink-500 text-white px-4 py-2 mx-2 rounded-full hover:bg-pink-600 transition-colors active" data-tab="projects">Projects</button>
+            <button class="tab-btn bg-pink-500 text-white px-4 py-2 mx-2 rounded-full hover:bg-pink-600 transition-colors" data-tab="tech-stack">Tech Stack</button>
+            <button class="tab-btn bg-pink-500 text-white px-4 py-2 mx-2 rounded-full hover:bg-pink-600 transition-colors" data-tab="certifications">Certifications</button>
+            <button class="tab-btn bg-pink-500 text-white px-4 py-2 mx-2 rounded-full hover:bg-pink-600 transition-colors" data-tab="co-curricular">Co-Curricular</button>
+        </nav>
+
+        <!-- Tab Content -->
+        <!-- Projects Section -->
+        <section id="projects" class="tab-content bg-white bg-opacity-80 rounded-2xl p-8 mb-8 shadow-lg">
+            <h2 class="text-3xl font-semibold text-pink-500 mb-4 flex items-center">
+                <span class="mr-2">🌟</span> My Projects
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-pink-100 p-4 rounded-lg hover:scale-105 transition-transform relative group">
+                    <h3 class="text-xl font-bold text-purple-700">Identifying Malnutrition in Children Using Photos</h3>
+                    <div class="absolute inset-0 bg-pink-200 bg-opacity-90 rounded-lg p-4 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-center">
+                        <p class="text-purple-800 font-semibold">Tech Stack: TensorFlow, Keras, OpenCV, PIL, Google Colab</p>
+                    </div>
+                </div>
+                <div class="bg-pink-100 p-4 rounded-lg hover:scale-105 transition-transform relative group">
+                    <h3 class="text-xl font-bold text-purple-700">Mood-Driven Meal Planner</h3>
+                    <div class="absolute inset-0 bg-pink-200 bg-opacity-90 rounded-lg p-4 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-center">
+                        <p class="text-purple-800 font-semibold">Tech Stack: Python, TensorFlow, NLP</p>
+                    </div>
+                </div>
+                <div class="bg-pink-100 p-4 rounded-lg hover:scale-105 transition-transform relative group">
+                    <h3 class="text-xl font-bold text-purple-700">Personal Finance Tracker</h3>
+                    <div class="absolute inset-0 bg-pink-200 bg-opacity-90 rounded-lg p-4 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-center">
+                        <p class="text-purple-800 font-semibold">Tech Stack: Flask, MySQL, Matplotlib</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section id="tech-stack" class="tab-content bg-white bg-opacity-80 rounded-2xl p-8 mb-8 shadow-lg hidden">
+            <h2 class="text-3xl font-semibold text-pink-500 mb-4 flex items-center">
+                <span class="mr-2">💻</span> Tech Stack
+            </h2>
+            <ul class="text-purple-800 list-disc list-inside">
+                <li>Programming: Python, JavaScript, SQL</li>
+                <li>Frameworks: TensorFlow, Keras, Flask</li>
+                <li>Tools: OpenCV, PIL, Matplotlib, Google Colab</li>
+                <li>Databases: MySQL</li>
+                <li>Other: NLP, Data Visualization, CNNs</li>
+            </ul>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="tab-content bg-white bg-opacity-80 rounded-2xl p-8 mb-8 shadow-lg hidden">
+            <h2 class="text-3xl font-semibold text-pink-500 mb-4 flex items-center">
+                <span class="mr-2">🏆</span> Certifications
+            </h2>
+            <ul class="text-purple-800 list-disc list-inside">
+                <li>Deep Learning Specialization (Coursera)</li>
+                <li>Python for Data Science (NPTEL)</li>
+                <li>Machine Learning with TensorFlow (Google)</li>
+            </ul>
+        </section>
+
+        <!-- Co-Curricular Section -->
+        <section id="co-curricular" class="tab-content bg-white bg-opacity-80 rounded-2xl p-8 mb-8 shadow-lg hidden">
+            <h2 class="text-3xl font-semibold text-pink-500 mb-4 flex items-center">
+                <span class="mr-2">🎉</span> Co-Curricular Activities
+            </h2>
+            <ul class="text-purple-800 list-disc list-inside">
+                <li>President, Data Science Club</li>
+                <li>Winner, Inter-College Hackathon 2024</li>
+                <li>Organizer, TechFest AI Workshop</li>
+                <li>Volunteer, STEM Outreach for Kids</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="bg-white bg-opacity-80 rounded-2xl p-8 text-center">
+            <h2 class="text-3xl font-semibold text-pink-500 mb-4 flex items-center justify-center">
+                <span class="mr-2">💌</span> Get in Touch
+            </h2>
+            <p class="text-purple-800 mb-4">Wanna collab on something dope? Slide into my inbox! 😜</p>
+            <a href="mailto:saumyaghatole@gmail.com" class="bg-pink-500 text-white px-6 py-2 rounded-full hover:bg-pink-600 transition-colors">
+                Say Hiii!
+            </a>
+        </section>
+    </div>
+
+    <!-- Floating Hearts -->
+    <div id="hearts" class="fixed top-0 left-0 w-full h-full pointer-events-none z-20"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
